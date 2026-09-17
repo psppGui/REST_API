@@ -7,14 +7,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.apirestspringboot.model.UserModel;
+import com.apirestspringboot.apirest.model.UserModel;
 
-public interface UserRepository extends JpaRepository<UserModel, UUID> {
-
-    Optional<UserModel> findByName(String name);
-
-    Boolean existsByModelCarAndCelNumber(String modelCar, String celNumber);
-
-    @Query(value = "SELECT * FROM Users WHERE email = :email", nativeQuery = true)
-    Optional<UserModel> buscarPorEmailNativo(@Param("email") String email);
+public interface UserRepository extends JpaRepository<UserModel, UUID>{
+	Optional<UserModel> findById(UUID id);
+	Optional<UserModel> findByName(String name);
+	Boolean existsByModelCarAndCelNumber(String modelCar, String celNumber);
+	
+	@Query(value = "SELECT * FROM Users WHERE email = :email", nativeQuery = true)
+	Optional<UserModel> buscarPorEmailNativo(@Param("email") String email);
+	
 }

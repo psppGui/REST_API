@@ -1,4 +1,4 @@
-package com.apirestspringboot.model;
+package com.apirestspringboot.apirest.model;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -10,8 +10,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
-@Table(name="Users")
+@Table(name = "Users")
 public class UserModel {
     private static final long serialVersionUID = 1L;
 		
@@ -82,6 +83,6 @@ public class UserModel {
 		this.registrationDate = registrationDate;
 	}
 	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	 	return serialVersionUID;
+    }
 }

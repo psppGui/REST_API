@@ -1,9 +1,10 @@
-package com.apirestspringboot.dto;
+package com.apirestspringboot.apirest.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
 public class UserDto{
-    @NotBlank
+    
+	@NotBlank
 	private String name;
 	@NotBlank
 	private String cpf;
